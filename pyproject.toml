@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillvault"
+version = "0.1.0"
+description = "CLI index for Claude Code CLAUDE.md files, memories, and skill definitions across projects"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.9.0",
+    "tomli-w>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+skillvault = "src.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
